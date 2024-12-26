@@ -5,6 +5,6 @@
 [x] html views
 [x] static file server
 [x] htmx
-[ ] database & migrations
+[x] database & migrations
 [ ] middleware
 [ ] rate limitter

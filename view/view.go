@@ -10,6 +10,6 @@ var (
 	viewFS embed.FS
 )
 
-func Must(patterns ...string) *template.Template {
+func MustNew(patterns ...string) *template.Template {
 	return template.Must(template.ParseFS(viewFS, patterns...))
 }
