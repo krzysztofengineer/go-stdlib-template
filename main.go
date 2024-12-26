@@ -4,12 +4,15 @@ import (
 	"log"
 	"log/slog"
 	"net/http"
+	"template/view"
 )
 
 func main() {
 	r := http.NewServeMux()
+
+	t := view.Must("layouts/base.html", "pages/home.html")
 	r.HandleFunc("GET /", func(w http.ResponseWriter, r *http.Request) {
-		w.Write([]byte("Hello, world!"))
+		t.Execute(w, nil)
 	})
 
 	s := http.Server{
