@@ -1,3 +1,13 @@
 {{ define "content" }}
 <h1>Home Page!</h1>
+
+<form hx-post="/test" hx-swap="outerHTML">
+    <button type="submit">
+        Load HTMX
+    </button>
+</form>
+{{ end }}
+
+{{ define "test" }}
+<h2>Hello from HTMX!</h2>
 {{ end }}

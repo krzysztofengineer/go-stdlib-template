@@ -22,6 +22,10 @@ func main() {
 		t.Execute(w, nil)
 	})
 
+	r.HandleFunc("POST /test", func(w http.ResponseWriter, r *http.Request) {
+		t.ExecuteTemplate(w, "test", nil)
+	})
+
 	staticSubDir, _ := fs.Sub(staticFS, "static")
 	fs := http.FileServerFS(staticSubDir)
 
